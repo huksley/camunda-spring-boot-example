@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_08ph0zp" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decideOnColor" name="Suggest a cage based on favorite color">
+    <extensionElements>
+      <biodi:bounds x="144" y="131" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Favorite color" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>favoriteColor</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1psuf5t">
+          <text></text>
+        </inputValues>
+      </input>
+      <output id="output1" label="Suggested cake" name="suggestedCake" typeRef="string" />
+      <output id="OutputClause_1bqqh9s" label="Is error?" name="decisionError" typeRef="boolean" />
+      <output id="OutputClause_0rqhpn1" label="Error message" name="decisionErrorMessage" typeRef="string" />
+      <rule id="row-564712579-1">
+        <description></description>
+        <inputEntry id="UnaryTests_1j9j725">
+          <text><![CDATA["brown"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10x28rz">
+          <text><![CDATA["chocolate"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1djrgk3">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wmh9tl">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-564712579-2">
+        <inputEntry id="UnaryTests_1t5i4jd">
+          <text><![CDATA["red"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rqps7a">
+          <text><![CDATA["strawberry"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dizmbd">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vcn2hs">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-564712579-3">
+        <inputEntry id="UnaryTests_1vuzo1e">
+          <text><![CDATA["green"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lst85f">
+          <text><![CDATA["macaroni"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qemt9p">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_037okr8">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-564712579-4">
+        <inputEntry id="UnaryTests_11wqyiv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c5pksc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_061d423">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qk90so">
+          <text><![CDATA["I don`t known which a good cake for that color 😱"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
