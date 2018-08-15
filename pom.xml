@@ -47,6 +47,31 @@
             <version>${camunda.spring.boot.starter.version}</version>
         </dependency>
 
+        <!-- https://github.com/camunda/camunda-bpm-swagger -->
+        <dependency>
+            <groupId>org.camunda.bpm.extension.swagger</groupId>
+            <artifactId>camunda-bpm-swagger-json</artifactId>
+            <version>7.8.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>de.siegmar</groupId>
+            <artifactId>logback-gelf</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
