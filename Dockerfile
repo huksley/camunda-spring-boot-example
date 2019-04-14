@@ -28,7 +28,6 @@ RUN mkdir -p /app
 WORKDIR /app
 COPY --from=0 /usr/src/app/target/*-exec.jar /app/app.jar
 ADD wait-for /app/wait-for
-RUN touch /app/app.jar && chmod 0644 /app/app.jar && chmod a+x /app/wait-for
 
 # Runtime parameters (docker run ... org docker-compose environment: ...)
 ENV JAVA_OPTS=""
