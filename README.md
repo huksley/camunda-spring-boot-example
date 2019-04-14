@@ -1,20 +1,21 @@
-# Spring Boot Web application with Camunda Webapps
+# Camunda BPM example based on Spring Boot
 
-Forked from https://github.com/camunda/camunda-bpm-examples/tree/master/spring-boot-starter/example-webapp?ref=7f807189b443c2f10e8cb192303a46b0fef7ac62
+Based on [Camunda Spring Boot starter app](https://github.com/camunda/camunda-bpm-examples/tree/master/spring-boot-starter/example-webapp?ref=7f807189b443c2f10e8cb192303a46b0fef7ac62)
 
-This example demonstrates how you can build Spring Boot Web application having following configured:
+This example packages Camunda BPM platform as Spring Boot Web application with following configured:
 
-* Spring Boot2 + Java8
+* Spring Boot 2.1 + Java 8
 * Embedded Camunda engine
-* Camunda web applications 
-* Process application and one BPMN process deployed
-* Test user configured with login and password in `application.properties`
-* Process sample
-* Decision table sample
+* Camunda web applications (cockpit, admin, tasklist) 
+* Sample process application and one BPMN process deployed
+* Test user configured with login and password in [`application.properties`](src/main/resources/application.properties)
+* BPMN Process sample
+* DMN Decision table sample
 * Service task sample
 * External service task sample
 * Process unit testing
-* Launchpad - introduction page
+* Introduction and welcome page - launchpad
+* Swagger UI + OpenSchema.json
 
 ![Launchpad](src/main/resources/static/launchpad/launchpad.png)
 
@@ -36,15 +37,16 @@ mvn clean package
 
 ## Running
 
-To run application at http://localhost:8087 execute:
+To run application at http://localhost:8080 execute:
 
 ```bash
 mvn spring-boot:run
 ```
 
-## Available services:
+## Deploying to docker
 
-* Cockpit
-* Tasklist
-* Admin
+Execute following to deploy to Docker
 
+```bash
+docker run -d -p 8080:8080 camundacloud/camunda-demo 
+```

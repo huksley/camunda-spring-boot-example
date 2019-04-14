@@ -6,6 +6,7 @@ import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.client.RestTemplate;
@@ -23,6 +24,9 @@ public class ExternalTaskExecutor {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Value("${server.port}")
+    int port = 8080;
 
     private String workerId = "sampleWorker";
 
@@ -76,12 +80,12 @@ public class ExternalTaskExecutor {
             build();
 
         try {
-            String fetchUrl = "http://localhost:8087/engine-rest/external-task/fetchAndLock";
+            String fetchUrl = "http://localhost:" + port + "/engine-rest/external-task/fetchAndLock";
             TaskInfo[] fetchResponse = restTemplate.postForObject(fetchUrl, r, TaskInfo[].class);
             log.info("Got {} external tasks to execute", fetchResponse.length);
             for (TaskInfo task : fetchResponse) {
                 log.info("Marking {} as complete", task.getId());
-                String completeUrl = "http://localhost:8087/engine-rest/external-task/" + task.getId() + "/complete";
+                String completeUrl = "http://localhost:" + port + "/engine-rest/external-task/" + task.getId() + "/complete";
                 CompleteRequest completeRequest = CompleteRequest.builder().
                     workerId(workerId).
                     variables(new HashMap<>()).

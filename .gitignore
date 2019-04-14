@@ -1,2 +1,10 @@
 .idea
 target
+
+
+# VSCode
+.settings
+.vscode
+.factorypath
+.project
+.classpath

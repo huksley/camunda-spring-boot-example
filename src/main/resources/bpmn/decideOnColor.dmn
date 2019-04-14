@@ -19,10 +19,10 @@
       <rule id="row-564712579-1">
         <description></description>
         <inputEntry id="UnaryTests_1j9j725">
-          <text><![CDATA["brown"]]></text>
+          <text>"brown"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_10x28rz">
-          <text><![CDATA["chocolate"]]></text>
+          <text>"chocolate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1djrgk3">
           <text>false</text>
@@ -33,10 +33,10 @@
       </rule>
       <rule id="row-564712579-2">
         <inputEntry id="UnaryTests_1t5i4jd">
-          <text><![CDATA["red"]]></text>
+          <text>"red"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1rqps7a">
-          <text><![CDATA["strawberry"]]></text>
+          <text>"red velvet"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dizmbd">
           <text>false</text>
@@ -47,10 +47,10 @@
       </rule>
       <rule id="row-564712579-3">
         <inputEntry id="UnaryTests_1vuzo1e">
-          <text><![CDATA["green"]]></text>
+          <text>"green"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1lst85f">
-          <text><![CDATA["macaroni"]]></text>
+          <text>"macarons"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1qemt9p">
           <text>false</text>
@@ -70,7 +70,7 @@
           <text>true</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qk90so">
-          <text><![CDATA["I don`t known which a good cake for that color 😱"]]></text>
+          <text>"I don`t known which a good cake for that color 😱"</text>
         </outputEntry>
       </rule>
     </decisionTable>
