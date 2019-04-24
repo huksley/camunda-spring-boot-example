@@ -52,6 +52,17 @@ docker build . -t camundacloud/camunda-demo
 docker run -d -p 8080:8080 camundacloud/camunda-demo
 ```
 
+## Security
+
+By default, **password** are generated for user demo when you run it first time.
+It is shown on the first line printed by container when it starts:
+
+```
+========= YOUR CAMUNDA PASSWORD IS 123 =========
+```
+
+Specify fixed password by providing CAMUNDA_PWD environment variable using docker or Google Cloud Run.
+
 ## Deploying to Google Cloud run
 
 ```
