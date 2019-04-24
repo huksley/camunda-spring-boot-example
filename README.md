@@ -43,10 +43,27 @@ To run application at http://localhost:8080 execute:
 mvn spring-boot:run
 ```
 
-## Deploying to docker
+## Deploying locally to docker
 
-Execute following to deploy to Docker
+Execute following to start via Docker
 
 ```bash
-docker run -d -p 8080:8080 camundacloud/camunda-demo 
+docker build . -t camundacloud/camunda-demo
+docker run -d -p 8080:8080 camundacloud/camunda-demo
+```
+
+## Deploying to Google Cloud run
+
+```
+gcloud beta run deploy --image gcr.io/camundacloud/camunda-demo --memory=1G
+```
+
+## Push to google cloud
+
+Create your GCR in Google Cloud and use your own Docker image.
+
+```
+docker build . -t camundacloud/camunda-demo
+docker tag camundacloud/camunda-demo gcr.io/camundacloud/camunda-demo
+docker push gcr.io/camundacloud/camunda-demo
 ```

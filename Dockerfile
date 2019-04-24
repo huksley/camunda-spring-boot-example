@@ -24,10 +24,11 @@ EXPOSE 8080
 VOLUME /tmp
 
 # Add JAR from project (required docker-maven-plugin at least 0.23.0)
-RUN mkdir -p /app
+RUN mkdir -p /app && apk --update add pwgen
 WORKDIR /app
 COPY --from=0 /usr/src/app/target/*-exec.jar /app/app.jar
 ADD wait-for /app/wait-for
+ADD run-app /app/run-app
 
 # Runtime parameters (docker run ... org docker-compose environment: ...)
 ENV JAVA_OPTS=""
@@ -58,4 +59,4 @@ USER $USERNAME
 ENV HOME=/app
 
 # Run unprivileged, specify JAVA_BINARY, WAITFOR, JAVA_OPTS, JAVA_RUN or use defaults.
-ENTRYPOINT [ "sh", "-c", "if [ \"$WAITFOR\" != \"\" ]; then /app/wait-for $WAITFOR -- $JAVA_BINARY $JAVA_OPTS $JAVA_RUN; else $JAVA_BINARY $JAVA_OPTS $JAVA_RUN; fi" ]
+ENTRYPOINT [ "/app/run-app", "if [ \"$WAITFOR\" != \"\" ]; then /app/wait-for $WAITFOR -- $JAVA_BINARY $JAVA_OPTS $JAVA_RUN; else $JAVA_BINARY $JAVA_OPTS $JAVA_RUN; fi" ]
