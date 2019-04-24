@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
 CAMUNDA_PWD=`pwgen -n1 8`
-echo "=========\n\nYOUR CAMUNDA PASSWORD IS\n${CAMUNDA_PWD}\n\n========="
+echo "========= YOUR CAMUNDA PASSWORD IS ${CAMUNDA_PWD} ========="
 JAVA_OPTS="${JAVA_OPTS} -Dcamunda.bpm.admin-user.password=$CAMUNDA_PWD"
 sh -c "$1"
