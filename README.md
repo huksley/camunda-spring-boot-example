@@ -4,18 +4,18 @@ Based on [Camunda Spring Boot starter app](https://github.com/camunda/camunda-bp
 
 This example packages Camunda BPM platform as Spring Boot Web application with following configured:
 
-* Spring Boot 2.1 + Java 8
-* Embedded Camunda engine
-* Camunda web applications (cockpit, admin, tasklist) 
-* Sample process application and one BPMN process deployed
-* Test user configured with login and password in [`application.properties`](src/main/resources/application.properties)
-* BPMN Process sample
-* DMN Decision table sample
-* Service task sample
-* External service task sample
-* Process unit testing
-* Introduction and welcome page - launchpad
-* Swagger UI + OpenSchema.json
+- Spring Boot 2.1 + Java 8
+- Embedded Camunda engine
+- Camunda web applications (cockpit, admin, tasklist)
+- Sample process application and one BPMN process deployed
+- Test user configured with login and password in [`application.properties`](src/main/resources/application.properties)
+- BPMN Process sample
+- DMN Decision table sample
+- Service task sample
+- External service task sample
+- Process unit testing
+- Introduction and welcome page - launchpad
+- Swagger UI + OpenSchema.json
 
 ![Launchpad](src/main/resources/static/launchpad/launchpad.png)
 
@@ -40,7 +40,7 @@ mvn clean package
 To run application at http://localhost:8080 execute:
 
 ```bash
-mvn spring-boot:run
+mvn clean package spring-boot:run
 ```
 
 ## Deploying locally to docker
@@ -54,7 +54,7 @@ docker run -d -p 8080:8080 camundacloud/camunda-demo
 
 ## Security
 
-By default, **password** are generated for user demo when you run it first time.
+By default, when running in Docker **password** are generated for user demo when you run it first time.
 It is shown on the first line printed by container when it starts:
 
 ```

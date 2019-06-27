@@ -12,8 +12,8 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.boot.version>2.1.1.RELEASE</spring.boot.version>
-        <camunda.spring.boot.starter.version>3.2.0</camunda.spring.boot.starter.version>
+        <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
+        <camunda.spring.boot.starter.version>3.3.2</camunda.spring.boot.starter.version>
     </properties>
 
     <dependencyManagement>
@@ -92,7 +92,7 @@
         <dependency>
             <groupId>org.camunda.bpm.extension.mockito</groupId>
             <artifactId>camunda-bpm-mockito</artifactId>
-            <version>4.9.0</version>
+            <version>4.10.0</version>
             <scope>test</scope>
         </dependency>
 
